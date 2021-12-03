@@ -15,7 +15,10 @@
           import nixpkgs { inherit system overlays; config.allowBroken = true; };
         project = returnShellEnv:
           pkgs.mkShell {
-	    packages = [ pkgs.idris2 ];
+            packages = with pkgs; [
+              idris2
+              nixpkgs-fmt
+            ];
           };
       in
       {
