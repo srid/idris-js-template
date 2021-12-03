@@ -1,5 +1,5 @@
 {
-  description = "idris2-template's description";
+  description = "idris-template's description";
   inputs = {
     flake-utils.url = "github:numtide/flake-utils";
     flake-compat = {
@@ -16,7 +16,7 @@
         project = returnShellEnv:
           pkgs.mkShell {
             packages = with pkgs; [
-              idris2
+              idris
               nixpkgs-fmt
             ];
           };

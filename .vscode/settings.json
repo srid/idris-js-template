@@ -2,5 +2,5 @@
   "editor.formatOnType": true,
   "editor.formatOnSave": true,
   "nixEnvSelector.nixFile": "${workspaceRoot}/shell.nix",
-  "idris.executablePath": "idris2"
+  "idris.executablePath": "idris"
 }
