@@ -1,3 +1,3 @@
 
 all:	hello.idr 
-	idris --execute hello.idr
+	idris2 hello.idr -x main
