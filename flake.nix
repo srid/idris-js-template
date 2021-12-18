@@ -8,15 +8,19 @@
     };
   };
   outputs = inputs@{ self, nixpkgs, flake-utils, ... }:
-    flake-utils.lib.eachSystem [ "x86_64-linux" "x86_64-darwin" ] (system:
+    flake-utils.lib.eachSystem [ "x86_64-linux" "x86_64-darwin" "aarch64-darwin" ] (system:
       let
         overlays = [ ];
         pkgs =
           import nixpkgs { inherit system overlays; config.allowBroken = true; };
+        idrisPkgs =
+          if system == "aarch64-darwin"
+          then import nixpkgs { system = "x86_64-darwin"; }  # Rosetta only, no M1 build available
+          else pkgs;
         project = returnShellEnv:
           pkgs.mkShell {
             packages = with pkgs; [
-              idris
+              idrisPkgs.idris2
               nixpkgs-fmt
             ];
           };
