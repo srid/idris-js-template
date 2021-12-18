@@ -30,6 +30,10 @@
         defaultPackage = project false;
 
         # Used by `nix develop` (dev shell)
-        devShell = project true;
+        devShell = (project true).overrideAttrs (oa: {
+          shellHook = oa.shellHook + ''
+            export DYLD_LIBRARY_PATH=${idrisPkgs.idris2}/lib:$DYLD_LIBRARY_PATH
+          '';
+        });
       });
 }
