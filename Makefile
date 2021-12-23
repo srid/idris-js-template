@@ -1,6 +1,8 @@
 
-all:	build/exec/hello_app/hello.so
-	build/exec/hello_app/hello.so
+all:	build/exec/main.js
 
-build/exec/hello_app/hello.so:	hello.idr 
-	idris2 hello.idr -o hello 
+build/exec/main.js:	main.idr 
+	idris2 -o main.js main.idr --cg javascript
+
+run:
+	live-server

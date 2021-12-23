@@ -22,6 +22,7 @@
             packages = with pkgs; [
               idrisPkgs.idris2
               nixpkgs-fmt
+              nodePackages.live-server
             ];
           };
       in
