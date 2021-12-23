@@ -2,14 +2,10 @@
 
 Acquire Idris; [disregard](https://idris2.readthedocs.io/en/latest/backends/javascript.html) JavaScript.
 
-To build,
+Run dev server,
 
 ```sh
-make # Or Ctrl+Shift+B in VSCode
+bin/run # Or Ctrl+Shift+B in VSCode
 ```
 
-To run the server,
-
-```sh
-make run
-```
+This starts a compilation watch (that recompiles JS on source change), and runs the live-server on the resulting assets. You get a live reloading page on the browser as result, which updates as the Idris source changes.

@@ -20,5 +20,5 @@ consoleLog x = primIO $ prim__consoleLog x
 
 main : IO ()
 main = do 
-    consoleLog "Hello from Idris!"
-    setBodyInnerHtml "Idris wrote this on your DOM"
+  consoleLog "Hello from Idris!"
+  setBodyInnerHtml "<i>This part is written by main.idr.</i>"

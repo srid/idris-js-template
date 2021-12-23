@@ -23,6 +23,10 @@
               idrisPkgs.idris2
               nixpkgs-fmt
               nodePackages.live-server
+              goreman
+              entr
+              nodejs
+              nodePackages.concurrently
             ];
           };
       in

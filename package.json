@@ -1,0 +1,9 @@
+{
+  "name": "idris-js-template",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "concurrently npm:make:*",
+    "make:idrisid": "make idrisid",
+    "make:web": "make web"
+  }
+}
